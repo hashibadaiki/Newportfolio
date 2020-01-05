@@ -6,10 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ばーんのポートフォリオ</title>
   <link rel="stylesheet" href="_style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese" rel="stylesheet">
 </head>
 <body>
   <header class="siteList">
     <nav class="navigation">
+        <i class="fas fa-bars"></i>
       <ol class="navigationList">
         <li class="navigationList__top">TOP</li>
         <li class="navigationList__portfolio">制作物</li>
@@ -21,39 +24,89 @@
   <main>
 
     <section class="hero">
-      <img  class="hero__image" src="" alt="">
-      <h1 class="hero__title">
-        サンプルタイトル
-      </h1>
+      <div class="hero__image">
+        <div class="hero__image--backColor">
+          <h1 class="hero__title">
+            サンプルタイトル
+          </h1>
+        </div>
+      </div>
     </section>
 
-    <section class="portfolio">
-      <h2 class="portfolio__title"></h2>
+    <section class="portfolio basicStyle">
+      <h2 class="portfolio__title">制作物一覧</h2>
       <ul class="portfolioList">
-        <li class="portfolioList__minsyuku--pseudoWebsite"></li>
-        <li class="portfolioList__portfolio--oldest"></li>
-        <li class="portfolioList__Qiita--article"></li>
-        <li class="portfolioList__comingSoon"></li>
+        <a href="https://minsyuku-example.netlify.com/index.html">
+          <li class="portfolioList__minsyuku">
+            <h3 class="portfolioList__minsyuku--title">
+              民宿（擬似サイト）</h3>
+            <p class="portfolioList__minsyuku--text">
+              架空の民宿をイメージして制作したWebsiteです。</p>
+          </li>
+        </a>
+        <a href="https://baanportfolio.netlify.com/">
+          <li class="portfolioList__firstPortfolio">
+            <h3 class="portfolioList__firstPortfolio--title">
+              ポートフォリオサイト（旧）</h3>
+            <p class="portfolioList__firstPortfolio--text">
+              初めて制作したポートフォリオサイトです。</p>
+          </li>
+        </a>
+        <a href="https://qiita.com/baan_nasebanaru">
+          <li class="portfolioList__Qiita">
+            <h3 class="portfolioList__Qiita--title">
+              制作記事</h3>
+            <p class="portfolioList__Qiita--text">
+              過去に執筆した記事の一覧です。</p>
+          </li>
+        </a>
+        <!-- <a href=""> --><!-- 作成後に追加 -->
+          <li class="portfolioList__comingSoon">
+            <h3 class="portfolioList__comingSoon--title">
+              API連携</h3>
+            <p class="portfolioList__comingSoon--text">
+              現在制作中</p>
+          </li>
+        <!-- </a> -->
       </ul>
     </section>
 
-    <section class="profile">
-      <h2 class="profile__title"></h2>
+    <section class="profile basicStyle">
+      <h2 class="profile__title">自己紹介</h2>
       <ul class="profileList">
         <li class="profileList__img">
-          <img src="" alt="" class="profileList__img--active">
+          <img src="image/profile.jpg" alt="ばーんの写真" class="profileList__img--active">
         </li>
-        <li class="profileList__text"></li>
-        <li class="profileList__experience"></li>
+        <li class="profileList__aboutMe">
+          <p class="profileList__aboutMe--name">
+            名前：ばーん</p>
+          サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</li>
+        <li class="profileList__workExperience">
+          <p class="profileList__workExperience--index">経歴</p>
+          さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。さんぷるてきすと。
+        </li>
       </ul>
     </section>
 
-    <section class="contact">
-      <h2 class="contact__title"></h2>
+    <section class="contact basicStyle">
+      <h2 class="contact__title">and more...</h2>
       <address class="HowToContact">
         <ul class="contactList">
-          <li class="contactList__twitter"></li>
-          <li class="contactList__email"></li>
+          <a href="https://twitter.com/baan_nasebanaru">
+            <li class="contactList__twitter">
+              <i class="fab fa-twitter-square fa-3x"></i>
+            </li>
+          </a>
+          <a href="https://github.com/hashibadaiki">
+            <li class="contactList__github">
+              <i class="fab fa-github-square fa-3x"></i>
+            </li>
+          </a>
+          <a href="https://www.facebook.com/daiki.hasiba">
+            <li class="contactList__facebook">
+              <i class="fab fa-facebook-square fa-3x"></i>
+            </li>
+          </a>
         </ul>
       </address>
     </section>
@@ -61,6 +114,6 @@
   </main>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="append.js"></script>
+  <script type="text/javascript" src="modal.js"></script>
 </body>
 </html>

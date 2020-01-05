@@ -1,2 +1,115 @@
 @import "base";
 
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese');
+
+$border-radius : 3px;
+
+a{
+  text-decoration: none;
+  color: rgb(15, 15, 15);
+}
+
+*{
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+body{
+  font-size: clamp(20px, calc((5 / 112) * 100vw), 40px);
+}
+
+main{
+  width: 100%;
+}
+
+.siteList{
+  display: none;
+}
+
+$bgHight : 300px;
+
+.hero__image{
+  background-image: url(image/heroImage.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: $bgHight;
+  max-width: 1280px;
+  z-index: 1;
+  
+  &--backColor{
+    background: linear-gradient(to top, rgba(240, 235, 235, 0.397),
+    rgba(238, 233, 233, 0.856));
+    max-width: 1280px;
+    height: $bgHight;
+    z-index: 2;
+  }
+}
+
+.hero__title{
+  padding: 30px 20px;
+  font-size: 1.7rem;
+}
+
+.basicStyle{
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  li{
+  list-style-type: none;
+  }
+}
+
+$titleSize : 1.5rem;
+$titlePadding : 20px;
+
+.portfolio__title{
+  font-size: $titleSize;
+  padding-top: $titlePadding;
+}
+
+.portfolioList{
+  li{
+    margin: 15px 0;
+    padding: 10px;
+    border:solid 1px rgb(179, 175, 175);
+    border-radius:$border-radius;
+  }
+  h3{
+  padding-bottom: 10px;
+  }
+}
+
+.profile__title{
+  font-size: $titleSize;
+  padding-bottom: $titlePadding;
+}
+
+.profileList{
+  &__img{
+    text-align: center;
+    background-color: rgba(230, 237, 238, 0.315);
+    border-radius:$border-radius;
+  }
+  &__img--active{
+    border-radius:$border-radius;
+    height: 250px;
+  }
+  &__aboutMe,&__workExperience{
+    margin: 15px 0;
+
+    &--index,&--name{
+      margin: 5px 0;
+    }
+  }
+}
+
+.contact__title{
+  font-size: $titleSize;
+  padding-bottom: $titlePadding;
+}
+
+.contactList{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
