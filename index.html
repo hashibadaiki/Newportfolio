@@ -12,13 +12,25 @@
 <body>
   <header class="siteList">
     <nav class="navigation">
-        <i class="fas fa-bars"></i>
-      <ol class="navigationList">
-        <li class="navigationList__top">TOP</li>
-        <li class="navigationList__portfolio">制作物</li>
-        <li class="navigationList__profile">自己紹介</li>
-        <li class="navigationList__contact">連絡</li>
-      </ol>
+      <ul class="navigationList">
+        <li class="navigationList__closeBtn">
+          <div class="closeEnclose">
+            <i class="fas fa-times fa-1.5x"></i>
+          </div>
+        </li>
+        <li class="navigationList__top">
+          <div class="navigationList__btn"> TOP</div>
+        </li>
+        <li class="navigationList__portfolio">
+          <div class="navigationList__btn">制作物</div>
+        </li>
+        <li class="navigationList__profile">
+          <div class="navigationList__btn">自己紹介</div>
+        </li>
+        <li class="navigationList__contact">
+          <div class="navigationList__btn">and more...</div>
+        </li>
+      </ul>
     </nav>
   </header>
   <main>
@@ -26,9 +38,20 @@
     <section class="hero">
       <div class="hero__image">
         <div class="hero__image--backColor">
-          <h1 class="hero__title">
-            サンプルタイトル
-          </h1>
+          <div class="titleEnclose">
+            <h1 class="hero__title">
+              サンプルタイトル
+            </h1>
+            <div class="buttonEnclose">
+              <div class="buttonEnclose__inner">
+                <button type="button" class="humbuggerBtn">
+                  <div class="menuBtn active">
+                    <i class="fas fa-bars fa-3x"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -75,7 +98,7 @@
       <h2 class="profile__title">自己紹介</h2>
       <ul class="profileList">
         <li class="profileList__img">
-          <img src="image/profile.jpg" alt="ばーんの写真" class="profileList__img--active">
+          <img src="image/profile.jpg" alt="ばーんの写真" class="profileList__img--current">
         </li>
         <li class="profileList__aboutMe">
           <p class="profileList__aboutMe--name">

@@ -111,8 +111,94 @@ main {
   width: 100%;
 }
 
-.siteList {
+.navigationList {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.navigationList__closeBtn {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+
+.navigationList__portfolio, .navigationList__profile, .navigationList__contact, .navigationList__top {
+  padding-top: 50px;
+  list-style-type: none;
+}
+
+.navigationList__btn {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.navigationList {
   display: none;
+}
+
+.navigationList.active {
+  display: inline-block;
+}
+
+.fa-times {
+  cursor: pointer;
+}
+
+.closeEnclose {
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+.navigation {
+  position: fixed;
+  width: 100%;
+  height: 200vh;
+  background-color: rgba(248, 245, 87, 0.925);
+  transform: scale(0, 1);
+  transition: 0.3s;
+  transform-origin: right;
+}
+
+.navigation.active {
+  transform: scale(1, 1);
+  text-align: center;
+}
+
+.humbuggerBtn {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  list-style: none;
+  background: none;
+  cursor: pointer;
+}
+
+.menuBtn {
+  display: none;
+}
+
+.menuBtn.active {
+  display: inline-block;
+  z-index: 2;
+}
+
+.titleEnclose {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.buttonEnclose {
+  width: 20%;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hero__image {
@@ -134,12 +220,13 @@ main {
 .hero__title {
   padding: 30px 20px;
   font-size: 1.7rem;
+  width: 100%;
 }
 
 .basicStyle {
   width: 80%;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 100px 0;
 }
 
 .basicStyle li {
@@ -148,7 +235,7 @@ main {
 
 .portfolio__title {
   font-size: 1.5rem;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .portfolioList li {
@@ -173,7 +260,7 @@ main {
   border-radius: 3px;
 }
 
-.profileList__img--active {
+.profileList__img--current {
   border-radius: 3px;
   height: 250px;
 }
