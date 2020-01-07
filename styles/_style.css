@@ -134,7 +134,6 @@ main {
   cursor: pointer;
 }
 
-s
 .navigationList {
   display: none;
 }
@@ -203,7 +202,7 @@ s
 }
 
 .hero__image {
-  background-image: url(image/heroImage.jpeg);
+  background-image: url(../images/heroImage.jpeg);
   background-size: cover;
   background-position: center;
   height: 300px;

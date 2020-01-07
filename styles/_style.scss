@@ -41,8 +41,6 @@ main{
   }
 }
 
-s
-
 .navigationList{
   display: none;
 }
@@ -113,7 +111,7 @@ s
 $bgHight : 300px;
 
 .hero__image{
-  background-image: url(image/heroImage.jpeg);
+  background-image: url(../images/heroImage.jpeg);
   background-size: cover;
   background-position: center;
   height: $bgHight;
