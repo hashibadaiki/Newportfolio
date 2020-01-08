@@ -214,6 +214,7 @@ main {
   background: linear-gradient(to top, rgba(240, 235, 235, 0.397), rgba(238, 233, 233, 0.856));
   max-width: 1280px;
   height: 300px;
+  background-position: center;
   z-index: 2;
 }
 
@@ -282,7 +283,7 @@ main {
   margin: 30px 0;
 }
 
-.profileList__aboutMe--index, .profileList__aboutMe--name, .profileList__workExperience--index, .profileList__workExperience--name {
+.profileList__aboutMe__index, .profileList__aboutMe__name, .profileList__workExperience__index, .profileList__workExperience__name {
   margin: 10px 0;
   color: #f06412;
 }
@@ -300,4 +301,75 @@ main {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolioList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .portfolioList a {
+    width: 45%;
+    margin: 15px;
+  }
+  .portfolioList li {
+    height: 150px;
+  }
+  .profileList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .profileList__img, .profileList__aboutMe {
+    width: 45%;
+  }
+  .profileList__img {
+    margin-right: 15px;
+  }
+  .hero__image {
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    max-width: 1600px;
+    height: 600px;
+  }
+  .hero__image--backColor {
+    background: linear-gradient(to top, rgba(240, 235, 235, 0), rgba(238, 233, 233, 0));
+    max-width: 1600px;
+    background-position: center;
+    z-index: 2;
+  }
+  .profile__title, .portfolio__title, .contact__title {
+    font-size: 3rem;
+  }
+  .hero__title {
+    font-size: 4rem;
+    color: #f06412;
+    padding: 200px 0 0 30px;
+  }
+  .buttonEnclose {
+    display: none;
+  }
+  .navigationList {
+    display: flex;
+    z-index: 4;
+    position: fixed;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+  .navigationList__closeBtn {
+    display: none;
+  }
+  .navigationList__portfolio, .navigationList__profile, .navigationList__contact, .navigationList__top {
+    padding-top: 0;
+  }
+  .navigation {
+    width: 100%;
+    transform: scale(1, 1);
+    height: 60px;
+    background-color: rgba(248, 245, 87, 0.925);
+  }
 }

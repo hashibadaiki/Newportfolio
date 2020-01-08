@@ -123,6 +123,7 @@ $bgHight : 300px;
     rgba(238, 233, 233, 0.856));
     max-width: 1280px;
     height: $bgHight;
+    background-position: center;
     z-index: 2;
   }
 }
@@ -188,7 +189,7 @@ $pickUpColor : rgb(240, 100, 18);
   &__aboutMe,&__workExperience{
     margin: 30px 0;
 
-    &--index,&--name{
+    &__index,&__name{
       margin: 10px 0;
       color: $pickUpColor;
     }
@@ -210,3 +211,87 @@ $pickUpColor : rgb(240, 100, 18);
   justify-content: space-around;
 }
 
+@media screen and (min-width:768px){
+  .portfolioList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a{
+      width: 45%;
+      margin: 15px;
+    }
+
+    li{
+      height: 150px;
+    }
+  }
+
+    .profileList{
+      display: flex;
+      flex-wrap: wrap;  
+      justify-content: center;
+
+      &__img,&__aboutMe{
+        width: 45%;
+      }
+      &__img{
+        margin-right: 15px;
+      }
+    }
+
+
+    .hero__image{
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      max-width: 1600px;
+      height: 600px;
+      
+      &--backColor{
+        background: linear-gradient(to top, rgba(240, 235, 235, 0),
+        rgba(238, 233, 233, 0));
+        max-width: 1600px;
+        background-position: center;
+        z-index: 2;
+      }
+    }
+    
+    .profile__title,.portfolio__title,.contact__title{
+      font-size: 3rem;
+    }
+
+    .hero__title{
+      font-size: 4rem;
+      color:rgb(240, 100, 18);
+      padding: 200px 0 0 30px;
+    }
+
+    .buttonEnclose{
+      display: none;
+    }
+
+    .navigationList{
+      display: flex;
+      z-index: 4;
+      position: fixed;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      width: 100%;
+      &__closeBtn{
+        display: none;
+      }
+      &__portfolio,&__profile,&__contact,&__top{
+        padding-top: 0;
+      }  
+    }
+    
+    .navigation{
+      width: 100%;
+      transform: scale(1, 1);
+      height: 60px;
+      background-color: rgba(248, 245, 87, 0.925);
+    }
+    
+}
