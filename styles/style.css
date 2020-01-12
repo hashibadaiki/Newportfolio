@@ -235,6 +235,22 @@ main {
   display: none;
 }
 
+@keyframes line {
+  0% {
+    stroke-dashoffset: 1425px;
+  }
+  30% {
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #f01212;
+  }
+}
+
 .baan__path {
   stroke: #f01212;
   stroke-width: 1px;
@@ -255,22 +271,6 @@ main {
   stroke-dasharray: 1425px;
   stroke-dashoffset: 1425px;
   animation: line 3s ease-in 2s forwards;
-}
-
-@keyframes line {
-  0% {
-    stroke-dashoffset: 1425px;
-  }
-  30% {
-    fill: transparent;
-  }
-  60% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill: #f01212;
-  }
 }
 
 .basicStyle {
@@ -360,6 +360,49 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  .hero__title {
+    display: none;
+  }
+  .hero__title__pc {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0 0 10px;
+    width: 80%;
+  }
+  @keyframes line {
+    0% {
+      stroke-dashoffset: 1425px;
+    }
+    30% {
+      fill: transparent;
+    }
+    60% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill: #f01212;
+    }
+  }
+  .baanPc__path {
+    stroke: #f01212;
+    stroke-width: 1px;
+    fill: transparent;
+    stroke-dasharray: 1425px;
+    stroke-dashoffset: 1425px;
+    animation: line 2s ease-in 1s forwards;
+  }
+  .portfolioPc {
+    margin: 10px 0 0 5px;
+  }
+  .portfolioPc__path {
+    stroke: #f01212;
+    stroke-width: 1px;
+    fill: transparent;
+    stroke-dasharray: 1425px;
+    stroke-dashoffset: 1425px;
+    animation: line 2s ease-in 2s forwards;
+  }
   .portfolioList {
     display: flex;
     flex-wrap: wrap;
