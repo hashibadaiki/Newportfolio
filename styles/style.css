@@ -141,14 +141,15 @@ main {
 .navigationList.active {
   display: inline-block;
   color: #eef2f5;
+  font-family: "Oswald", sans-serif;
+}
+
+.navigationList__btn {
+  font-family: "Oswald", sans-serif;
 }
 
 .fa-times {
   cursor: pointer;
-}
-
-.fa-bars {
-  color: #f01212;
 }
 
 .closeEnclose {
@@ -215,11 +216,61 @@ main {
   z-index: 1;
 }
 
+.hero__image--backColor {
+  background: linear-gradient(to top, rgba(207, 22, 22, 0), rgba(240, 236, 236, 0.795) 90%);
+  max-width: 1280px;
+  height: 300px;
+  background-position: center;
+  z-index: 2;
+}
+
 .hero__title {
-  padding: 30px 20px;
-  font-size: 1.7rem;
-  width: 100%;
-  color: #f01212;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0 10px;
+  width: 80%;
+}
+
+.hero__title__pc {
+  display: none;
+}
+
+.baan__path {
+  stroke: #f01212;
+  stroke-width: 1px;
+  fill: transparent;
+  stroke-dasharray: 1425px;
+  stroke-dashoffset: 1425px;
+  animation: line 2s ease-in 1s forwards;
+}
+
+.portfolio {
+  margin: 5px 0 0 30px;
+}
+
+.portfolio__path {
+  stroke: #f01212;
+  stroke-width: 1px;
+  fill: transparent;
+  stroke-dasharray: 1425px;
+  stroke-dashoffset: 1425px;
+  animation: line 3s ease-in 2s forwards;
+}
+
+@keyframes line {
+  0% {
+    stroke-dashoffset: 1425px;
+  }
+  30% {
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #f01212;
+  }
 }
 
 .basicStyle {
@@ -235,6 +286,7 @@ main {
 .portfolio__title {
   font-size: 1.5rem;
   padding-top: 30px;
+  font-family: "Oswald", sans-serif;
 }
 
 .portfolioList {
@@ -251,6 +303,7 @@ main {
 .portfolioList h3 {
   padding-bottom: 10px;
   color: #f01212;
+  font-family: "Oswald", sans-serif;
 }
 
 .portfolioList p {
@@ -260,6 +313,7 @@ main {
 .profile__title {
   font-size: 1.5rem;
   padding-bottom: 20px;
+  font-family: "Oswald", sans-serif;
 }
 
 .profileList {
@@ -284,6 +338,9 @@ main {
 .profileList__aboutMe__index, .profileList__aboutMe__name, .profileList__workExperience__index, .profileList__workExperience__name {
   margin: 10px 0;
   color: #f01212;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .profileText {
@@ -293,6 +350,7 @@ main {
 .contact__title {
   font-size: 1.5rem;
   padding-bottom: 20px;
+  font-family: "Oswald", sans-serif;
 }
 
 .contactList {
@@ -333,10 +391,11 @@ main {
     height: 600px;
   }
   .hero__image--backColor {
-    background: linear-gradient(to top, rgba(240, 235, 235, 0), rgba(238, 233, 233, 0));
+    background: linear-gradient(to top left, rgba(240, 235, 235, 0), rgba(238, 233, 233, 0.623) 95%);
     max-width: 1600px;
     background-position: center;
     z-index: 2;
+    height: 600px;
   }
   .profile__title, .portfolio__title, .contact__title {
     font-size: 3rem;
@@ -344,7 +403,7 @@ main {
   .hero__title {
     font-size: 4rem;
     color: #f01212;
-    padding: 200px 0 0 30px;
+    padding: 150px 0 0 30px;
   }
   .buttonEnclose {
     display: none;

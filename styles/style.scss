@@ -21,6 +21,8 @@ $titleSize : 1.5rem;
 $titlePadding : 20px;
 $textSize : 1.1rem;
 $pickUpColor : rgb(240, 18, 18);
+$englishFont: 'Oswald', sans-serif;
+
 
 main{
   width: 100%;
@@ -39,29 +41,32 @@ main{
   &__portfolio,&__profile,&__contact,&__top{
     padding-top: 50px;
     list-style-type: none;
-  }  
+  }
   &__btn{
     display: inline-block;
     cursor: pointer;
-  }  
-}  
+  }
+}
 
 .navigationList{
   display: none;
-}  
+}
 
 .navigationList.active{
   display: inline-block;
   color: rgb(238, 242, 245);
-}  
+  font-family: $englishFont;
+}
+
+.navigationList__btn{
+  font-family: $englishFont;
+}
 
 .fa-times{
   cursor: pointer;
 }
 
-.fa-bars{
-  color: $pickUpColor;
-}
+
 
 .closeEnclose{
   padding-right: 25px;
@@ -127,14 +132,59 @@ $bgHight : 300px;
   height: $bgHight;
   max-width: 1280px;
   z-index: 1;
-}  
+  &--backColor{
+    background: linear-gradient(to top,rgba(207, 22, 22, 0), 
+    rgba(240, 236, 236, 0.795) 90%);
+    max-width: 1280px;
+    height: $bgHight;
+    background-position: center;
+    z-index: 2;
+  }
+  
+}
 
 .hero__title{
-  padding: 30px 20px;
-  font-size: 1.7rem;
-  width: 100%;
-  color: $pickUpColor;
-}  
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0 10px;
+  width: 80%;
+  &__pc{
+    display: none;
+  }
+}
+
+
+.baan{
+
+  &__path{stroke:$pickUpColor;
+    stroke-width:1px; fill:transparent;
+    stroke-dasharray:1425px;
+    stroke-dashoffset:1425px;
+    animation:line 2s ease-in 1s forwards;
+  }
+}
+
+
+.portfolio{
+  margin: 5px 0 0 30px;
+  &__path{stroke:$pickUpColor;
+    stroke-width:1px; fill:transparent;
+    stroke-dasharray:1425px;
+    stroke-dashoffset:1425px;
+    animation:line 3s ease-in 2s forwards;
+  }
+}
+
+
+@keyframes line{
+0%{stroke-dashoffset:1425px;}
+30%{fill:transparent;}
+60%{stroke-dashoffset:0;}
+100%{stroke-dashoffset:0; fill:$pickUpColor;}
+}
+
+
+
 
 .basicStyle{
   width: 80%;
@@ -148,6 +198,7 @@ $bgHight : 300px;
 .portfolio__title{
   font-size: $titleSize;
   padding-top: 30px;
+  font-family: $englishFont;
 }
 
 .portfolioList{
@@ -161,6 +212,7 @@ $bgHight : 300px;
   h3{
   padding-bottom: 10px;
   color: $pickUpColor;
+  font-family: $englishFont;
   }
   p{
     font-size: $textSize;
@@ -170,6 +222,7 @@ $bgHight : 300px;
 .profile__title{
   font-size: $titleSize;
   padding-bottom: $titlePadding;
+  font-family: $englishFont;
 }
 
 .profileList{
@@ -189,6 +242,9 @@ $bgHight : 300px;
     &__index,&__name{
       margin: 10px 0;
       color: $pickUpColor;
+      font-family: $englishFont;
+      font-size: $titleSize;
+      font-weight: bold;
     }
   }
 }
@@ -200,6 +256,7 @@ $bgHight : 300px;
 .contact__title{
   font-size: $titleSize;
   padding-bottom: $titlePadding;
+  font-family: $englishFont;
 }
 
 .contactList{
@@ -246,11 +303,12 @@ $bgHight : 300px;
       height: 600px;
       
       &--backColor{
-        background: linear-gradient(to top, rgba(240, 235, 235, 0),
-        rgba(238, 233, 233, 0));
+        background: linear-gradient(to top left, rgba(240, 235, 235, 0),
+        rgba(238, 233, 233, 0.623) 95%);
         max-width: 1600px;
         background-position: center;
         z-index: 2;
+        height: 600px;
       }
     }
     
@@ -261,7 +319,7 @@ $bgHight : 300px;
     .hero__title{
       font-size: 4rem;
       color:rgb(240, 18, 18);
-      padding: 200px 0 0 30px;
+      padding: 150px 0 0 30px;
     }
 
     .buttonEnclose{
