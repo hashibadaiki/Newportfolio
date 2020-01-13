@@ -20,6 +20,7 @@ body{
 $titleSize : 1.5rem;
 $titlePadding : 20px;
 $textSize : 1.1rem;
+$textSize__mini : 0.9rem;
 $pickUpColor : rgb(240, 18, 18);
 $englishFont: 'Oswald', sans-serif;
 
@@ -169,7 +170,7 @@ $bgHight : 300px;
   }
 }
 
-.portfolio{
+.portfolioSvg{
   margin: 5px 0 0 30px;
   &__path{stroke:$pickUpColor;
     stroke-width:1px; fill:transparent;
@@ -196,19 +197,24 @@ $bgHight : 300px;
 
 .portfolioList{
   line-height: 1.2;
-  li{
+  &__minsyuku,&__firstPortfolio,&__Qiita,&__comingSoon{
     margin: 15px 0;
     padding: 10px;
     border:solid 1px rgb(179, 175, 175);
     border-radius:$border-radius;
+    font-size: $textSize__mini;
+    color: rgb(129, 126, 126);
   }
-  h3{
-  padding-bottom: 10px;
+  &__minsyuku__title,&__firstPortfolio__title,&__Qiita__title,&__comingSoon__title{
   color: $pickUpColor;
   font-family: $englishFont;
+  font-size: $titleSize;
+  padding-bottom: 5px;
   }
-  p{
+  &__minsyuku__text,&__firstPortfolio__text,&__Qiita__text,&__comingSoon__text{
     font-size: $textSize;
+    padding-top: 10px;
+    color: rgb(8, 8, 8);
   }
 }
 
@@ -246,19 +252,139 @@ $bgHight : 300px;
   font-size: $textSize;
 }
 
+.addProfile{
+  display: none;
+}
+
+.footer{
+  background-color: rgb(79, 83, 148);
+  li{
+  list-style-type: none;  
+  }
+}
+
+#ityped{
+  font-family: $englishFont;
+  font-size: $titleSize;
+}
+
+.type{
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.ityped-cursor {
+  font-size: 1em;
+  opacity: 1;
+  -webkit-animation: blink 0.3s infinite;
+  -moz-animation: blink 0.3s infinite;
+  animation: blink 0.3s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
 .contact__title{
   font-size: $titleSize;
   padding-bottom: $titlePadding;
   font-family: $englishFont;
 }
 
+$footerColor:rgb(245, 241, 241);
+
 .contactList{
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: center;
+
+  &__twitter,&__github{
+    padding-right: 10px;
+    color: $footerColor;
+  }
+  &__facebook{
+    color: $footerColor;
+  }
 }
 
+.HowToContact{
+  padding: 30px 0 10px 0;
+}
+
+.copyright{
+  text-align: center;
+  padding: 5px 0;
+  font-size: $textSize__mini;
+  color: $footerColor;
+}
+
+
+
 @media screen and (min-width:768px){
+
+  .profile__title,.portfolio__title,.contact__title{
+    font-size: 3rem;
+  }
+
+  .hero__image{
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    max-width: 1600px;
+    height: 600px;
+    
+    &--backColor{
+      background: linear-gradient(to top left, rgba(240, 235, 235, 0),
+      rgba(238, 233, 233, 0.623) 95%);
+      max-width: 1600px;
+      background-position: center;
+      z-index: 2;
+      height: 600px;
+    }
+  }
+
+  .buttonEnclose{
+    display: none;
+    }
+
+  .navigationList{
+    display: flex;
+    z-index: 4;
+    position: fixed;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    &__closeBtn{
+      display: none;
+    }
+    &__portfolio,&__profile,&__contact,&__top{
+      padding-top: 0;
+    }  
+    }
+    
+  .navigation{
+    width: 100%;
+    transform: scale(1, 1);
+    height: 80px;
+    background-color: rgba(12, 12, 11, 0.925);
+    color: rgb(238, 242, 245);
+  }
 
   .hero__title{
     display: none;
@@ -275,12 +401,13 @@ $bgHight : 300px;
   0%{stroke-dashoffset:1425px;}
   30%{fill:transparent;}
   60%{stroke-dashoffset:0;}
-  100%{stroke-dashoffset:0; fill:$pickUpColor;}
+  100%{stroke-dashoffset:0;fill:$pickUpColor;}
   }
   
   .baanPc__path{
   stroke:$pickUpColor;
-  stroke-width:1px; fill:transparent;
+  stroke-width:1px;
+  fill:transparent;
   stroke-dasharray:1425px;
   stroke-dashoffset:1425px;
   animation:line 2s ease-in 1s forwards;
@@ -290,102 +417,101 @@ $bgHight : 300px;
     margin: 10px 0 0 5px;
   &__path{
   stroke:$pickUpColor;
-  stroke-width:1px; fill:transparent;
+  stroke-width:1px;
+  fill:transparent;
   stroke-dasharray:1425px;
   stroke-dashoffset:1425px;
   animation:line 2s ease-in 2s forwards;
   }
 }
-  
 
-  .portfolioList {
+  .portfolioList{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     a{
       width: 45%;
       margin: 15px;
     }
-
     li{
       height: 150px;
     }
+    &__minsyuku,&__firstPortfolio,&__Qiita,&__comingSoon{
+      font-size: $textSize;
+    }
+
+    &__minsyuku__text,&__firstPortfolio__text,&__Qiita__text,&__comingSoon__text{
+      font-size: $titleSize;
+    }
   }
 
-    .profileList{
-      display: flex;
-      flex-wrap: wrap;  
-      justify-content: center;
+  .profileList{
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
 
-      &__img,&__aboutMe{
-        width: 45%;
-      }
-      &__img{
-        margin-right: 15px;
-      }
+    &__aboutMe{
+      width: 35%;
+      margin: 0;
     }
-
-
-    .hero__image{
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-      max-width: 1600px;
-      height: 600px;
-      
-      &--backColor{
-        background: linear-gradient(to top left, rgba(240, 235, 235, 0),
-        rgba(238, 233, 233, 0.623) 95%);
-        max-width: 1600px;
-        background-position: center;
-        z-index: 2;
-        height: 600px;
-      }
-    }
-    
-    .profile__title,.portfolio__title,.contact__title{
-      font-size: 3rem;
-    }
-
-    .hero__title{
-      font-size: 4rem;
-      color:rgb(240, 18, 18);
-      padding: 150px 0 0 30px;
-    }
-
-    .buttonEnclose{
-      display: none;
-    }
-
-    .navigationList{
-      display: flex;
-      z-index: 4;
-      position: fixed;
-      align-items: center;
-      justify-content: space-around;
-      height: 100%;
-      width: 100%;
-      &__closeBtn{
-        display: none;
-      }
-      &__portfolio,&__profile,&__contact,&__top{
-        padding-top: 0;
-      }  
-    }
-    
-    .navigation{
-      width: 100%;
-      transform: scale(1, 1);
-      height: 80px;
-      background-color: rgba(12, 12, 11, 0.925);
-      color: rgb(238, 242, 245);
-    }
-    
-    .profileList__img{
+    &__img{
+      width: 60%;
+      margin-right: 15px;
       background-color: rgba(255, 255, 255, 0);
       &--current{
         height: 350px;
-      }
+      }  
     }
-}
+    }
+
+    .profileText{
+      line-height: 2;
+    }
+
+    #ityped{
+      font-size: 3rem;
+    }
+
+    .HowToContact{
+      padding: 60px 0 20px 0;
+    }
+    
+    .copyright{
+      padding: 20px 0;
+    }
+
+    .type{
+      padding: 40px 0;
+    }
+
+    .contactList{
+      font-size: 1.5rem;
+    }
+    
+
+  }
+
+  @media screen and (min-width:1000px){
+    .profileList{  
+      &__aboutMe{
+        width: 45%;
+      }
+      &__img{
+        width: 45%;
+      }
+      }
+  
+      .addProfile{
+        display: inline;
+      }
+
+      .contactTwitter{
+        text-decoration: underline;
+        color: rgb(19, 201, 233);
+        font-size: $textSize__mini;
+      }
+
+      .contactTwitter:hover{
+
+      }
+  }
