@@ -7,20 +7,24 @@ $(function () {
       $('.menuBtn').addClass('active');
     }
     
-    if($('.navigation,.navigationList').hasClass('active')){
-      $('.navigation,.navigationList').removeClass('active');
+    if($('.navigation').hasClass('active')){
+      $('.navigation').removeClass('active');
     } else {
-      $('.navigation,.navigationList').addClass('active');
+      $('.navigation').addClass('active');
     }
+    
+    if($('.navigationList').hasClass('active')){
+      $('.navigationList').removeClass('active');
+    } else {
+      $('.navigationList').addClass('active');
+    }
+
+    
   });
-  
+    
   $('.fa-times').click(function () {
     
-    if($('.navigation,.navigationList').hasClass('active')){
-      $('.navigation,.navigationList').removeClass('active');
-    } else {
-      $('.navigation,.navigationList').addClass('active');
-    }
+    $('.navigation,.navigationList').removeClass('active');
 
     if($('.menuBtn').hasClass('active')){
       $('.menuBtn').removeClass('active');

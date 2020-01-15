@@ -10,7 +10,8 @@ a{
 }
 
 *{
-  font-family: 'Sawarabi Mincho', sans-serif;
+  // font-family: 'Sawarabi Mincho', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 body{
@@ -21,9 +22,11 @@ $titleSize : 1.5rem;
 $titlePadding : 20px;
 $textSize : 1.1rem;
 $textSize__mini : 0.9rem;
-$pickUpColor : rgb(240, 18, 18);
+$pickUpColor : rgb(20, 19, 19);
 $englishFont: 'Oswald', sans-serif;
-
+$bgcolorBase : rgba(12, 12, 11, 0.925);
+$headFooterColor : rgb(238, 242, 245);
+$titleColor:rgb(240, 9, 9);
 
 main{
   width: 100%;
@@ -32,6 +35,8 @@ main{
 .navigationList{
   font-size: 2rem;
   text-align: center;
+  display: none;
+
   &__closeBtn{
     width: 100vw;
     height: 50px;
@@ -49,13 +54,9 @@ main{
   }
 }
 
-.navigationList{
-  display: none;
-}
-
 .navigationList.active{
   display: inline-block;
-  color: rgb(238, 242, 245);
+  color: $headFooterColor;
   font-family: $englishFont;
 }
 
@@ -67,8 +68,6 @@ main{
   cursor: pointer;
 }
 
-
-
 .closeEnclose{
   padding-right: 25px;
   padding-top: 30px;
@@ -79,8 +78,9 @@ main{
   width: 100%;
   height: 200vh;
   background-color: rgba(12, 12, 11, 0.925);
+  color: $pickUpColor;
   transform: scale(0, 1);
-  transition: 0.3s;
+  transition: 0.2s;
   transform-origin: right;
 }  
 .navigation.active {
@@ -158,11 +158,11 @@ $bgHight : 300px;
 0%{stroke-dashoffset:1425px;}
 30%{fill:transparent;}
 60%{stroke-dashoffset:0;}
-100%{stroke-dashoffset:0; fill:$pickUpColor;}
+100%{stroke-dashoffset:0; fill:$titleColor;}
 }
 
 .baan{
-  &__path{stroke:$pickUpColor;
+  &__path{stroke:$titleColor;
     stroke-width:1px; fill:transparent;
     stroke-dasharray:1425px;
     stroke-dashoffset:1425px;
@@ -172,7 +172,7 @@ $bgHight : 300px;
 
 .portfolioSvg{
   margin: 5px 0 0 30px;
-  &__path{stroke:$pickUpColor;
+  &__path{stroke:$titleColor;
     stroke-width:1px; fill:transparent;
     stroke-dasharray:1425px;
     stroke-dashoffset:1425px;
@@ -214,7 +214,7 @@ $bgHight : 300px;
   &__minsyuku__text,&__firstPortfolio__text,&__Qiita__text,&__comingSoon__text{
     font-size: $textSize;
     padding-top: 10px;
-    color: rgb(8, 8, 8);
+    color: $pickUpColor;
   }
 }
 
@@ -257,7 +257,7 @@ $bgHight : 300px;
 }
 
 .footer{
-  background-color: rgb(79, 83, 148);
+  background-color: $bgcolorBase;
   li{
   list-style-type: none;  
   }
@@ -306,8 +306,6 @@ $bgHight : 300px;
   font-family: $englishFont;
 }
 
-$footerColor:rgb(245, 241, 241);
-
 .contactList{
   display: flex;
   flex-wrap: nowrap;
@@ -318,7 +316,7 @@ $footerColor:rgb(245, 241, 241);
     color: $footerColor;
   }
   &__facebook{
-    color: $footerColor;
+    color: $headFooterColor;
   }
 }
 
@@ -383,7 +381,7 @@ $footerColor:rgb(245, 241, 241);
     transform: scale(1, 1);
     height: 80px;
     background-color: rgba(12, 12, 11, 0.925);
-    color: rgb(238, 242, 245);
+    color: $headFooterColor;
   }
 
   .hero__title{

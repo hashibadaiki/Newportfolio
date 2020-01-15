@@ -100,7 +100,7 @@ a {
 }
 
 * {
-  font-family: 'Sawarabi Mincho', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 body {
@@ -114,6 +114,7 @@ main {
 .navigationList {
   font-size: 2rem;
   text-align: center;
+  display: none;
 }
 
 .navigationList__closeBtn {
@@ -132,10 +133,6 @@ main {
 .navigationList__btn {
   display: inline-block;
   cursor: pointer;
-}
-
-.navigationList {
-  display: none;
 }
 
 .navigationList.active {
@@ -162,8 +159,9 @@ main {
   width: 100%;
   height: 200vh;
   background-color: rgba(12, 12, 11, 0.925);
+  color: #141313;
   transform: scale(0, 1);
-  transition: 0.3s;
+  transition: 0.2s;
   transform-origin: right;
 }
 
@@ -247,12 +245,12 @@ main {
   }
   100% {
     stroke-dashoffset: 0;
-    fill: #f01212;
+    fill: #f00909;
   }
 }
 
 .baan__path {
-  stroke: #f01212;
+  stroke: #f00909;
   stroke-width: 1px;
   fill: transparent;
   stroke-dasharray: 1425px;
@@ -265,7 +263,7 @@ main {
 }
 
 .portfolioSvg__path {
-  stroke: #f01212;
+  stroke: #f00909;
   stroke-width: 1px;
   fill: transparent;
   stroke-dasharray: 1425px;
@@ -303,7 +301,7 @@ main {
 }
 
 .portfolioList__minsyuku__title, .portfolioList__firstPortfolio__title, .portfolioList__Qiita__title, .portfolioList__comingSoon__title {
-  color: #f01212;
+  color: #141313;
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   padding-bottom: 5px;
@@ -312,7 +310,7 @@ main {
 .portfolioList__minsyuku__text, .portfolioList__firstPortfolio__text, .portfolioList__Qiita__text, .portfolioList__comingSoon__text {
   font-size: 1.1rem;
   padding-top: 10px;
-  color: #080808;
+  color: #141313;
 }
 
 .profile__title {
@@ -342,7 +340,7 @@ main {
 
 .profileList__aboutMe__index, .profileList__aboutMe__name, .profileList__workExperience__index, .profileList__workExperience__name {
   margin: 10px 0;
-  color: #f01212;
+  color: #141313;
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
@@ -357,7 +355,7 @@ main {
 }
 
 .footer {
-  background-color: #4f5394;
+  background-color: rgba(12, 12, 11, 0.925);
 }
 
 .footer li {
@@ -497,11 +495,11 @@ main {
     }
     100% {
       stroke-dashoffset: 0;
-      fill: #f01212;
+      fill: #141313;
     }
   }
   .baanPc__path {
-    stroke: #f01212;
+    stroke: #141313;
     stroke-width: 1px;
     fill: transparent;
     stroke-dasharray: 1425px;
@@ -512,7 +510,7 @@ main {
     margin: 10px 0 0 5px;
   }
   .portfolioPc__path {
-    stroke: #f01212;
+    stroke: #141313;
     stroke-width: 1px;
     fill: transparent;
     stroke-dasharray: 1425px;
