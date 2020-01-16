@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ばーんのポートフォリオ</title>
+  <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="preload" href="images/heroImage.jpg" as="image">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
-  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap&subset=japanese" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=auto" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=auto&subset=japanese" rel="stylesheet">
 </head>
+
 <body>
   <header class="siteList">
     <nav class="navigation">
@@ -20,25 +22,47 @@
           <div class="closeEnclose">
             <i class="fas fa-times fa-1.5x"></i>
           </div>
+
         </li>
-        <li class="navigationList__top">
-          <div class="navigationList__btn"> TOP</div>
-        </li>
+        <!-- <li class="navigationList__top">
+          <div class="navigationList__btn" id="topJs"> TOP</div>
+        </li> -->
         <li class="navigationList__portfolio">
-          <div class="navigationList__btn">My portfolio</div>
+          <div class="navigationList__btn" id="portfolioJs">My portfolio</div>
         </li>
         <li class="navigationList__profile">
-          <div class="navigationList__btn">About me</div>
+          <div class="navigationList__btn" id="aboutJs">About me</div>
         </li>
         <li class="navigationList__contact">
-          <div class="navigationList__btn">and more...</div>
+          <div class="navigationList__btn" id="contactJs">and more...</div>
+        </li>
+      </ul>
+    </nav>
+    <nav class="navigation wide">
+      <ul class="navigationList" id="navigationWide__js">
+        <!-- <li class="navigationList__closeBtn"> -->
+          <!-- <div class="closeEnclose">
+            <i class="fas fa-times fa-1.5x"></i>
+          </div> -->
+        <!-- </li> -->
+        <li class="navigationList__top">
+          <div class="navigationList__btn" id="topJs__wide"> TOP</div>
+        </li>
+        <li class="navigationList__portfolio">
+          <div class="navigationList__btn" id="portfolioJs__wide">My portfolio</div>
+        </li>
+        <li class="navigationList__profile">
+          <div class="navigationList__btn" id="aboutJs__wide">About me</div>
+        </li>
+        <li class="navigationList__contact">
+          <div class="navigationList__btn" id="contactJs__wide">and more...</div>
         </li>
       </ul>
     </nav>
   </header>
   <main>
 
-    <section class="hero">
+    <section class="hero position-now">
       <div class="hero__image">
         <div class="hero__image--backColor">
           <div class="titleEnclose">
@@ -83,16 +107,18 @@
       </div>
     </section>
 
-    <section class="portfolio basicStyle">
-      <h2 class="portfolio__title">My portfolio</h2>
+    <section class="portfolio basicStyle position-now">
+      <h2 class="portfolio__title" id="goPortfolio">My portfolio</h2>
       <ul class="portfolioList">
-        <a href="https://minsyuku-example.netlify.com/index.html">
+        <a href="https://minsyuku-example.netlify.com/index.html" class="portfolioList__btn">
           <li class="portfolioList__minsyuku">
-            <h3 class="portfolioList__minsyuku__title">
-              民宿(擬似サイト)</h3>
-              学習20日で制作
-            <p class="portfolioList__minsyuku__text">
-              架空の民宿をイメージして制作したWebsiteです。</p>
+            <div class="portfolioList__layer--up"></div>
+              <h3 class="portfolioList__minsyuku__title">
+                民宿(擬似サイト)</h3>
+                学習20日で制作
+              <p class="portfolioList__minsyuku__text">
+                架空の民宿をイメージして制作したWebsiteです。</p>
+            <div class="portfolioList__layer--down"></div>
           </li>
         </a>
         <a href="https://baanportfolio.netlify.com/">
@@ -125,8 +151,8 @@
       </ul>
     </section>
 
-    <section class="profile basicStyle">
-      <h2 class="profile__title">About me</h2>
+    <section class="profile basicStyle position-now">
+      <h2 class="profile__title" id="goAbout">About me</h2>
       <ul class="profileList">
         <li class="profileList__img">
           <img src="images/profile.jpg" alt="ばーんの写真" class="profileList__img--current">
@@ -144,7 +170,7 @@
           </div>
         </li>
         <li class="profileList__workExperience">
-          <p class="profileList__workExperience__index">経歴</p>
+          <p class="profileList__workExperience__index  position-now">経歴</p>
           <div class="profileText">
             新卒でパチンコ店大手に就職。管理職6年。組合員数500人を超える組合長を経験。運営に3年間携わり視座を体得。
             <br>特に対人の洞察力が優れており、安定した組織運営で評価を獲得。
@@ -156,9 +182,10 @@
         </li>
       </ul>
     </section>
+  </main>
 
     <div class="type">
-      <span id="ityped"></span>
+      <span id="iTyped"></span>
     </div>
     <footer class="contact footer">
       <address class="HowToContact">
@@ -189,7 +216,6 @@
       </p>
     </footer>
 
-  </main>
   <script src="https://unpkg.com/ityped@1.0.3"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="scripts/modal.js"></script>

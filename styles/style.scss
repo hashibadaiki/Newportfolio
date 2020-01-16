@@ -1,6 +1,7 @@
 @import "base";
 
-@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=auto');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=auto');
 
 $border-radius : 3px;
 
@@ -10,7 +11,6 @@ a{
 }
 
 *{
-  // font-family: 'Sawarabi Mincho', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -77,7 +77,7 @@ main{
   position: fixed;
   width: 100%;
   height: 200vh;
-  background-color: rgba(12, 12, 11, 0.925);
+  background-color: $bgcolorBase;
   color: $pickUpColor;
   transform: scale(0, 1);
   transition: 0.2s;
@@ -86,7 +86,11 @@ main{
 .navigation.active {
   transform: scale(1, 1);
   text-align: center;
-}  
+}
+
+.navigation.wide{
+  display: none;
+}
 
 
 .humbuggerBtn{
@@ -218,6 +222,49 @@ $bgHight : 300px;
   }
 }
 
+.portfolioList__minsyuku{
+  position: relative;
+  // overflow: hidden;
+}
+
+// .portfolioList__minsyuku::before{
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   background-color: #6495ED;
+//   overflow: hidden;
+//   height: 100%;
+//   width: 100%;
+//   // transform: translateX(-100%);
+//   transition: all 1s;
+//   z-index: 3;
+//   // transform: scale(0, 1);
+//   transition: 0.2s;
+//   transform-origin: right;
+// }
+// .portfolioList__minsyuku:hover {
+//     // color: white;
+//     transition: all 1s;
+//     // transform: scale(1, 1);
+//     transform: translateX(-100%);
+//   }
+
+  .portfolioList__layer--up{
+    background-color: red;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &:hover{
+      opacity: 0;
+    }
+  }
+
+
+
 .profile__title{
   font-size: $titleSize;
   padding-bottom: $titlePadding;
@@ -263,7 +310,7 @@ $bgHight : 300px;
   }
 }
 
-#ityped{
+#iTyped{
   font-family: $englishFont;
   font-size: $titleSize;
 }
@@ -313,7 +360,7 @@ $bgHight : 300px;
 
   &__twitter,&__github{
     padding-right: 10px;
-    color: $footerColor;
+    color: $headFooterColor;
   }
   &__facebook{
     color: $headFooterColor;
@@ -328,7 +375,11 @@ $bgHight : 300px;
   text-align: center;
   padding: 5px 0;
   font-size: $textSize__mini;
-  color: $footerColor;
+  color: $headFooterColor;
+}
+
+.link-current {
+  border-bottom: 1px solid $headFooterColor;
 }
 
 
@@ -375,12 +426,18 @@ $bgHight : 300px;
       padding-top: 0;
     }  
     }
-    
+  
+
   .navigation{
+    display: none;
+  }
+
+  .navigation.wide{
+    display: inline-block;
     width: 100%;
     transform: scale(1, 1);
     height: 80px;
-    background-color: rgba(12, 12, 11, 0.925);
+    background-color: $bgcolorBase;
     color: $headFooterColor;
   }
 
@@ -466,7 +523,7 @@ $bgHight : 300px;
       line-height: 2;
     }
 
-    #ityped{
+    #iTyped{
       font-size: 3rem;
     }
 
@@ -489,7 +546,7 @@ $bgHight : 300px;
 
   }
 
-  @media screen and (min-width:1000px){
+  @media screen and (min-width:992px){
     .profileList{  
       &__aboutMe{
         width: 45%;

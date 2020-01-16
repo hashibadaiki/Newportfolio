@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese");
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=auto");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=auto");
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -170,6 +171,10 @@ main {
   text-align: center;
 }
 
+.navigation.wide {
+  display: none;
+}
+
 .humbuggerBtn {
   margin: 0;
   padding: 0;
@@ -313,6 +318,23 @@ main {
   color: #141313;
 }
 
+.portfolioList__minsyuku {
+  position: relative;
+}
+
+.portfolioList__layer--up {
+  background-color: red;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.portfolioList__layer--up:hover {
+  opacity: 0;
+}
+
 .profile__title {
   font-size: 1.5rem;
   padding-bottom: 20px;
@@ -362,7 +384,7 @@ main {
   list-style-type: none;
 }
 
-#ityped {
+#iTyped {
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
 }
@@ -413,11 +435,11 @@ main {
 
 .contactList__twitter, .contactList__github {
   padding-right: 10px;
-  color: #f5f1f1;
+  color: #eef2f5;
 }
 
 .contactList__facebook {
-  color: #f5f1f1;
+  color: #eef2f5;
 }
 
 .HowToContact {
@@ -428,7 +450,11 @@ main {
   text-align: center;
   padding: 5px 0;
   font-size: 0.9rem;
-  color: #f5f1f1;
+  color: #eef2f5;
+}
+
+.link-current {
+  border-bottom: 1px solid #eef2f5;
 }
 
 @media screen and (min-width: 768px) {
@@ -468,6 +494,10 @@ main {
     padding-top: 0;
   }
   .navigation {
+    display: none;
+  }
+  .navigation.wide {
+    display: inline-block;
     width: 100%;
     transform: scale(1, 1);
     height: 80px;
@@ -555,7 +585,7 @@ main {
   .profileText {
     line-height: 2;
   }
-  #ityped {
+  #iTyped {
     font-size: 3rem;
   }
   .HowToContact {
@@ -572,7 +602,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
   .profileList__aboutMe {
     width: 45%;
   }
