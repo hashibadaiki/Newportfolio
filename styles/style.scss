@@ -379,10 +379,54 @@ $bgHight : 300px;
 }
 
 .link-current {
-  border-bottom: 1px solid $headFooterColor;
+  border-bottom: 2px solid $headFooterColor;
+  position: relative;
+  display: inline-block;
+  padding-bottom:2px;
 }
 
+@keyframes currentBlack{
+  0%{border-top: 0px solid $bgcolorBase;}
+  20%{border-top: 2px solid $bgcolorBase;}
+  40%{border-top: 4px solid $bgcolorBase;}
+  80%{border-top: 6px solid $bgcolorBase;}
+  100%{border-top: 8px solid $bgcolorBase;}
+}
 
+@keyframes currentWhite{
+  0%{border-top: 0px solid $headFooterColor;}
+  20%{border-top: 2px solid $headFooterColor;}
+  40%{border-top: 5px solid $headFooterColor;}
+  80%{border-top: 8px solid $headFooterColor;}
+  100%{border-top: 10px solid $headFooterColor;}
+}
+
+.link-current::before,
+.link-current::after {
+  position: absolute;
+  top: 100%;
+  left:50%;
+  transform:translateX(-50%);
+  content: '';
+  border: 10px solid transparent;
+}
+
+.link-current::before {
+  animation-name: currentWhite;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.link-current::after {
+  margin-top: -1px;
+  animation-name: currentBlack;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
 
 @media screen and (min-width:768px){
 

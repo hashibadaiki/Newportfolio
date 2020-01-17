@@ -140,17 +140,13 @@ var contact = $('#iTyped').offset().top-100;
     });
 
     $(function () {
-      var set = 100;//ウインドウ上部からどれぐらいの位置で変化させるか
+      var set = 110;
       var boxTop = new Array;
       var current = -1;
-      //各要素の位置
-      //position-nowは場所を取得したい対象の要素に付ける
       $('.position-now').each(function (i) {
         boxTop[i] = $(this).offset().top;
       });
-      //最初の要素にclass="position-now"をつける
       changeBox(0);
-      //スクロールした時の処理
       $(window).scroll(function () {
         scrollPosition = $(window).scrollTop();
         for (var i = boxTop.length - 1; i >= 0; i--) {
@@ -160,26 +156,21 @@ var contact = $('#iTyped').offset().top-100;
           }
         };
       });
-      //ナビの処理
+
       function changeBox(secNum) {
         if (secNum != current) {
           current = secNum;
-          secNum2 = secNum + 1;//以下にクラス付与したい要素名と付与したいクラス名
+          secNum2 = secNum + 1;
           $('.navigation.wide li div').removeClass('link-current');
     
-          //位置によって個別に処理をしたい場合　
           if (current == 0) {
             $('#topJs__wide').addClass('link-current');
-            // 現在地がsection1の場合の処理
           } else if (current == 1) {
             $('#portfolioJs__wide').addClass('link-current');
-            // 現在地がsection2の場合の処理
           } else if (current == 2) {
-            // 現在地がsection3の場合の処理
             $('#aboutJs__wide').addClass('link-current');
           }
           else if (current == 3) {
-            // 現在地がsection4の場合の処理
             $('#contactJs__wide').addClass('link-current');
           }
           }
@@ -187,14 +178,3 @@ var contact = $('#iTyped').offset().top-100;
         }
     });
     });
-    // $(function () {
-    //   $('a[href^="#"]').click(function () {
-    //     var adjust = -100;
-    //     var speed = 500;
-    //     var href = $(this).attr("href");
-    //     var target = $(href == "#" || href == "" ? 'html' : href);
-    //     var position = target.offset().top + adjust;
-    //     $("html, body").animate({ scrollTop: position }, speed, "swing");
-    //     return false;
-    //   });
-    // });
