@@ -140,7 +140,7 @@ var contact = $('#iTyped').offset().top-100;
     });
 
     $(function () {
-      var set = 110;
+      var set = 120;
       var boxTop = new Array;
       var current = -1;
       $('.position-now').each(function (i) {

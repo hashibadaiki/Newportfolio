@@ -30,7 +30,11 @@ $titleColor:rgb(240, 9, 9);
 
 main{
   width: 100%;
-}  
+}
+
+html{
+  background-color: #f7f4f4;
+}
 
 .navigationList{
   font-size: 2rem;
@@ -222,49 +226,6 @@ $bgHight : 300px;
   }
 }
 
-.portfolioList__minsyuku{
-  position: relative;
-  // overflow: hidden;
-}
-
-// .portfolioList__minsyuku::before{
-//   content: '';
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   background-color: #6495ED;
-//   overflow: hidden;
-//   height: 100%;
-//   width: 100%;
-//   // transform: translateX(-100%);
-//   transition: all 1s;
-//   z-index: 3;
-//   // transform: scale(0, 1);
-//   transition: 0.2s;
-//   transform-origin: right;
-// }
-// .portfolioList__minsyuku:hover {
-//     // color: white;
-//     transition: all 1s;
-//     // transform: scale(1, 1);
-//     transform: translateX(-100%);
-//   }
-
-  .portfolioList__layer--up{
-    background-color: red;
-    height: 50%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    &:hover{
-      opacity: 0;
-    }
-  }
-
-
-
 .profile__title{
   font-size: $titleSize;
   padding-bottom: $titlePadding;
@@ -275,6 +236,7 @@ $bgHight : 300px;
   line-height: 1.4;
   &__img{
     text-align: center;
+    height: 250px;
     background-color: rgba(230, 237, 238, 0.315);
     border-radius:$border-radius;
   }
@@ -316,7 +278,7 @@ $bgHight : 300px;
 }
 
 .type{
-  padding-bottom: 20px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -413,18 +375,18 @@ $bgHight : 300px;
 
 .link-current::before {
   animation-name: currentWhite;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-in;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
 }
 
 .link-current::after {
   margin-top: -1px;
   animation-name: currentBlack;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-in;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
 }
 
@@ -483,6 +445,7 @@ $bgHight : 300px;
     height: 80px;
     background-color: $bgcolorBase;
     color: $headFooterColor;
+    z-index: 10;
   }
 
   .hero__title{
@@ -524,6 +487,9 @@ $bgHight : 300px;
   }
 }
 
+  .portfolio__title{
+    margin-bottom: 20px;
+  }
   .portfolioList{
     display: flex;
     flex-wrap: wrap;
@@ -534,6 +500,7 @@ $bgHight : 300px;
     }
     li{
       height: 150px;
+      margin: 0;
     }
     &__minsyuku,&__firstPortfolio,&__Qiita,&__comingSoon{
       font-size: $textSize;
@@ -557,6 +524,7 @@ $bgHight : 300px;
       width: 60%;
       margin-right: 15px;
       background-color: rgba(255, 255, 255, 0);
+      height: 350px;
       &--current{
         height: 350px;
       }  
@@ -580,7 +548,7 @@ $bgHight : 300px;
     }
 
     .type{
-      padding: 40px 0;
+      padding: 40px 0 200px 0;
     }
 
     .contactList{
@@ -590,27 +558,91 @@ $bgHight : 300px;
 
   }
 
-  @media screen and (min-width:992px){
-    .profileList{  
-      &__aboutMe{
-        width: 45%;
-      }
-      &__img{
-        width: 45%;
-      }
-      }
-  
-      .addProfile{
-        display: inline;
-      }
+@media screen and (min-width:992px){
+  .profileList{  
+    &__aboutMe{
+      width: 45%;
+    }
+    &__img{
+      width: 45%;
+    }
+    }
 
-      .contactTwitter{
-        text-decoration: underline;
-        color: rgb(19, 201, 233);
-        font-size: $textSize__mini;
-      }
+    .addProfile{
+      display: inline;
+    }
 
-      .contactTwitter:hover{
-
+  .contactTwitter {
+      font-size: $textSize__mini;
+      display: inline-block;
+      padding: 5px;
+      text-decoration: none;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      transition: 0.8s linear;
+      &::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s linear;
+        border-radius: $border-radius;
       }
+      &:hover{
+        color: #faf6f6;
+        &::after{
+          left: 0;
+          background-color: rgb(30, 223, 236);
+        }
+      }
+    }
+
   }
+
+  .portfolioList__minsyuku,.portfolioList__firstPortfolio,.portfolioList__Qiita,.portfolioList__comingSoon{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.8s linear;
+    &::before{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      bottom: -100%;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      transition: 0.3s linear;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -100%;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      transition: 0.3s linear;
+    }
+    &:hover{
+      .minsyukuWhite,.firstPortfolioWhite,.qiitaWhite,.comingSoonWhite{
+      color: $headFooterColor;
+    }
+
+      &::before{
+        bottom: 0;
+        right: 0;
+        background-color: $bgcolorBase;
+      }
+      &::after{
+        top: 0;
+        left: 0;
+        background-color: $bgcolorBase;
+      }
+    }
+  }
+
