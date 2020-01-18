@@ -168,6 +168,7 @@ html {
   transform: scale(0, 1);
   transition: 0.2s;
   transform-origin: right;
+  z-index: 3;
 }
 
 .navigation.active {
@@ -456,13 +457,13 @@ html {
     border-top: 2px solid rgba(12, 12, 11, 0.925);
   }
   40% {
-    border-top: 4px solid rgba(12, 12, 11, 0.925);
+    border-top: 5px solid rgba(12, 12, 11, 0.925);
   }
   80% {
-    border-top: 6px solid rgba(12, 12, 11, 0.925);
+    border-top: 8px solid rgba(12, 12, 11, 0.925);
   }
   100% {
-    border-top: 8px solid rgba(12, 12, 11, 0.925);
+    border-top: 10px solid rgba(12, 12, 11, 0.925);
   }
 }
 
@@ -503,7 +504,7 @@ html {
 }
 
 .link-current::after {
-  margin-top: -1px;
+  margin-top: -3px;
   animation-name: currentBlack;
   animation-duration: 0.3s;
   animation-timing-function: ease-in;
@@ -715,9 +716,9 @@ html {
   z-index: -1;
   bottom: -100%;
   right: 0;
-  width: 50%;
-  height: 100%;
-  transition: 0.3s linear;
+  width: 100%;
+  height: 50%;
+  transition: 0.4s linear;
 }
 
 .portfolioList__minsyuku::after, .portfolioList__firstPortfolio::after, .portfolioList__Qiita::after, .portfolioList__comingSoon::after {
@@ -726,12 +727,13 @@ html {
   z-index: -1;
   top: -100%;
   left: 0;
-  width: 50%;
-  height: 100%;
-  transition: 0.3s linear;
+  width: 100%;
+  height: 50%;
+  transition: 0.4s linear;
 }
 
 .portfolioList__minsyuku:hover .minsyukuWhite, .portfolioList__minsyuku:hover .firstPortfolioWhite, .portfolioList__minsyuku:hover .qiitaWhite, .portfolioList__minsyuku:hover .comingSoonWhite, .portfolioList__firstPortfolio:hover .minsyukuWhite, .portfolioList__firstPortfolio:hover .firstPortfolioWhite, .portfolioList__firstPortfolio:hover .qiitaWhite, .portfolioList__firstPortfolio:hover .comingSoonWhite, .portfolioList__Qiita:hover .minsyukuWhite, .portfolioList__Qiita:hover .firstPortfolioWhite, .portfolioList__Qiita:hover .qiitaWhite, .portfolioList__Qiita:hover .comingSoonWhite, .portfolioList__comingSoon:hover .minsyukuWhite, .portfolioList__comingSoon:hover .firstPortfolioWhite, .portfolioList__comingSoon:hover .qiitaWhite, .portfolioList__comingSoon:hover .comingSoonWhite {
+  transition: 0.8s linear;
   color: #eef2f5;
 }
 
@@ -744,5 +746,126 @@ html {
 .portfolioList__minsyuku:hover::after, .portfolioList__firstPortfolio:hover::after, .portfolioList__Qiita:hover::after, .portfolioList__comingSoon:hover::after {
   top: 0;
   left: 0;
+  background-color: rgba(12, 12, 11, 0.925);
+}
+
+.buttonEnclose {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+}
+
+.zdo_drawer_button * {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: left;
+  text-decoration: none;
+  list-style: none;
+}
+
+.zdo_drawer_button {
+  display: block;
+  padding: 0;
+  width: 42px;
+  height: 26px;
+  position: relative;
+  background: none;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  outline: none;
+}
+
+.zdo_drawer_button .zdo_drawer_bar {
+  display: block;
+  width: 42px;
+  height: 4px;
+  transition: all 0.2s;
+  transform-origin: 0% 0%;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+}
+
+.zdo_drawer_button .zdo_drawer_bar1 {
+  top: 0;
+}
+
+.zdo_drawer_button .zdo_drawer_bar2 {
+  top: 50%;
+}
+
+.zdo_drawer_button .zdo_drawer_bar3 {
+  top: 100%;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar {
+  width: 36.77px;
+  left: 8px;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar1 {
+  transform: rotate(0.7854rad) translateY(-50%);
+  top: 0px;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar2 {
+  opacity: 0;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar3 {
+  transform: rotate(-0.7854rad) translateY(-50%);
+  top: calc(100% - 0px);
+}
+
+.zdo_drawer_button.active .zdo_drawer_menu_text {
+  display: none;
+}
+
+.zdo_drawer_button.active .zdo_drawer_close {
+  display: block;
+}
+
+.zdo_drawer_text {
+  width: 100%;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  text-align: center;
+  font-size: 10px;
+}
+
+.zdo_drawer_close {
+  letter-spacing: 0.08em;
+  display: none;
+}
+
+/*+++ Default Button Color +++*/
+.zdo_drawer_button {
+  color: rgba(12, 12, 11, 0.925);
+  font-family: "Oswald", sans-serif;
+}
+
+.zdo_drawer_button.active {
+  color: #eef2f5;
+}
+
+.zdo_drawer_button.active.zdo_drawer_button .zdo_drawer_bar {
+  background-color: #eef2f5;
+}
+
+.zdo_drawer_button .zdo_drawer_bar {
   background-color: rgba(12, 12, 11, 0.925);
 }

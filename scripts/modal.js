@@ -177,4 +177,11 @@ var contact = $('#iTyped').offset().top-100;
     
         }
     });
+
+    $(function () {
+      $('.zdo_drawer_button').click(function () {
+        $(this).toggleClass('active');
+      })
+    })
+
     });
