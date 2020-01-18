@@ -130,7 +130,11 @@ html {
   list-style-type: none;
 }
 
-.navigationList__portfolio, .navigationList__profile, .navigationList__contact, .navigationList__top {
+.navigationList__portfolio {
+  padding-top: 150px;
+}
+
+.navigationList__profile, .navigationList__contact, .navigationList__top {
   padding-top: 50px;
   list-style-type: none;
 }
@@ -751,7 +755,7 @@ html {
 
 .buttonEnclose {
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   top: 0;
   right: 0;
 }
